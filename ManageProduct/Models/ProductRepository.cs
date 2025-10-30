@@ -22,6 +22,7 @@ namespace ManageProduct.Models
             var preModel = GetById(id);
             preModel.Name = product.Name;
             preModel.Price = product.Price;
+            preModel.Quantity = product.Quantity;
             preModel.productType = product.productType;
         }
         public List<Product> GetAll()
