@@ -4,7 +4,7 @@ namespace ManageProduct.Models
 {
     public class ProductRepository
     {
-        public List<Product> Products { get; set; } = new List<Product>();
+        public static List<Product> Products { get; set; } = new List<Product>();
         public decimal TotalValue()
         {
             return Products.Sum(x => x.Quantity * x.Price);
@@ -50,12 +50,6 @@ namespace ManageProduct.Models
             }
             
             return finded;
-            
- 
-            
-            
         }
-
-
     }
 }

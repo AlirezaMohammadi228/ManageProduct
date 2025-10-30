@@ -1,10 +1,27 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@model ProductRepository
+@model List<Product>
 @{
 }
 
+<form asp-controller="Product" asp-action="Index" method="post">
+    <div class="mb-3">
+        <label for="productType" class="form-label">Product Type</label>
+        <select name="productType" id="productType" class="form-select">
+
+            <option value="0">None</option>
+            <option value="1">Clothes</option>
+            <option value="2">Detergent</option>
+            <option value="3">Food</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" name="st" class="form-control" id="st">
+    </div>
+    <button type="submit" class="btn btn-primary">Apply Filter</button>
+</form>
 <a asp-action="Create">Create</a>
 <table class="table">
     <tr>
@@ -14,7 +31,7 @@
         <th>Type</th>
         <th>Action</th>
     </tr>
-    @foreach (var item in Model.GetAll())
+    @foreach (var item in Model)
     {
         <tr>
             <td>@item.Name</td>
@@ -28,5 +45,5 @@
         </tr>
     }
 </table>
-<p>Total Price: @Model.TotalValue()</p>
+<p>Total Price: @Model.Sum(x => x.Quantity * x.Price)</p>
 

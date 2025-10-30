@@ -7,10 +7,10 @@ namespace ManageProduct.Controllers
     public class ProductController : Controller
     {
         public static ProductRepository Repository { get; set; } = new();
-        public IActionResult Index()
-        {
-            return View(Repository);
-        }
+        //public IActionResult Index()
+        //{
+        //    return View(Repository);
+        //}
         public IActionResult Create()
         {
             return View();
