@@ -22,10 +22,12 @@
     <div class="mb-3">
         <label for="productType" class="form-label">Product Type</label>
         <select name="productType" id="productType" class="form-select">
-            <option value="0">None</option>
-            <option value="1">Clothes</option>
-            <option value="2">Detergent</option>
-            <option value="3">Food</option>
+            <select name="ProductType" id="ProductType" class="form-select">
+                <option value="0" selected="@(Model.productType == 0)">None</option>
+                <option value="1" selected="@(Model.productType == (ProductType)1)">Clothes</option>
+                <option value="2" selected="@(Model.productType == (ProductType)2)">Detergent</option>
+                <option value="3" selected="@(Model.productType == (ProductType)3)">Food</option>
+            </select>
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
