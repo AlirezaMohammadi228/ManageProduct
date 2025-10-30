@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Product>
+<a asp-action="Create">Create</a>
+<div class="container mt-5">
+    <table class="table table-bordered table-striped text-center align-middle">
+        <thead class="table-primary">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var product in Model)
+            {
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.productType</td>
+                <td>@product.Quantity</td>
+                
+            }
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+</div>

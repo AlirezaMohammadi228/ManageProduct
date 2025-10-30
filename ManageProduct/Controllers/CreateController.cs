@@ -8,7 +8,7 @@ namespace ManageProduct.Controllers
         public static ProductRepository ProductRepository { get; set; } = new ProductRepository();
         public IActionResult Index()
         {
-            return View();
+            return View(ProductRepository.GetAll());
         }
         public IActionResult Create()
         {
