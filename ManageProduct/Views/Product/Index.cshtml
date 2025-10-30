@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+    <table class="">
+        <thead>
+            <tr>
+                <th>ردیف</th>
+                <th>نام</th>
+                <th>نوع</th>
+                <th>قیمت</th>
+                <th>تعداد</th>
+            </tr>
+        </thead>
+        <tbody>
+            @* @{
+                int rowNumber = 1;
+            } *@
+            @* @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@rowNumber</td>
+                    <td>@item.Name</td>
+                    <td>@item.Type</td>
+                    <td>@item.Price.ToString("N0") تومان</td>
+                    <td>@item.Quantity</td>
+                </tr>
+                rowNumber++;
+            } *@
+        </tbody>
+    </table>
+    <button>Creat</button>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
