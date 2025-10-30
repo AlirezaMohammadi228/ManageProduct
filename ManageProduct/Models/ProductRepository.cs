@@ -1,4 +1,6 @@
-﻿namespace ManageProduct.Models
+﻿using System.Reflection;
+
+namespace ManageProduct.Models
 {
     public class ProductRepository
     {
@@ -15,9 +17,12 @@
         {
             Products.Remove(product);
         }
-        public void Edit(Product product)
+        public void Update(Product product)
         {
-           
+            var preModel = GetById(product.Id);
+            preModel.Name = product.Name;
+            preModel.Price = product.Price;
+            preModel.productType = product.productType;
         }
         public List<Product> GetAll()
         {
@@ -25,7 +30,7 @@
         }
         public Product GetById(int id)
         {
-            return Products.FirstOrDefault( x => x.Id == id);
+            return Products.FirstOrDefault(x => x.Id == id);
         }
     }
 }
