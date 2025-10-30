@@ -37,7 +37,7 @@ namespace ManageProduct.Controllers
         [HttpPost]
         public IActionResult Update(int id, [Bind("Name", "Price", "Quantity", "productType")] Product model)
         {
-            Repository.Update(Repository.GetById(id));
+            Repository.Update(model, id);
             return RedirectToAction("Index");
         }
     }

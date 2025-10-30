@@ -17,9 +17,9 @@ namespace ManageProduct.Models
         {
             product.IsExist = false;
         }
-        public void Update(Product product)
+        public void Update(Product product, int id)
         {
-            var preModel = GetById(product.Id);
+            var preModel = GetById(id);
             preModel.Name = product.Name;
             preModel.Price = product.Price;
             preModel.productType = product.productType;
