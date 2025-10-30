@@ -7,20 +7,24 @@
 <form asp-controller="Product" asp-action="Create" method="post">
     <div class="mb-3">
         <label for="Name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="Name" aria-describedby="emailHelp">
+        <input type="text" name="Name" class="form-control" id="Name" aria-describedby="emailHelp">
     </div>
     <div class="mb-3">
         <label for="Price" class="form-label">Price</label>
-        <input type="number" class="form-control" id="Price">
+        <input type="number" name="Price" class="form-control" id="Price">
     </div>
     <div class="mb-3">
         <label for="Quantity" class="form-label">Quantity</label>
-        <input type="number" class="form-control" id="Price">
+        <input type="number" name="Quantity" class="form-control" id="Quantity">
     </div>
     <div class="mb-3">
         <label for="productType" class="form-label">Product Type</label>
-        <select id="productType" class="form-select">
-            <option> select</option>
+        <select name="productType" id="productType" class="form-select">
+
+            <option value="0">None</option>
+            <option value="1">Clothes</option>
+            <option value="2">Detergent</option>
+            <option value="3">Food</option>
         </select>
     </div>
 

@@ -15,7 +15,7 @@ namespace ManageProduct.Models
         }
         public void Delete(Product product)
         {
-            Products.Remove(product);
+            product.IsExist = false;
         }
         public void Update(Product product)
         {
@@ -26,7 +26,7 @@ namespace ManageProduct.Models
         }
         public List<Product> GetAll()
         {
-            return Products;
+            return Products.Where(x => x.IsExist == true).ToList();
         }
         public Product GetById(int id)
         {

@@ -9,31 +9,35 @@ namespace ManageProduct.Controllers
         public static ProductRepository Repository { get; set; } = new();
         public IActionResult Index()
         {
-            return View(Repository.GetAll());
+            return View(Repository);
         }
         public IActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Product product)
+        public IActionResult Create([Bind("Name", "Price", "Quantity", "productType")] Product product)
         {
             Repository.Add(product);
             return RedirectToAction("Index");
 
         }
+        public IActionResult Delete(int id)
+        {
+            Repository.Delete(Repository.GetById(id));
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
         public IActionResult Update(int id)
         {
             var model = Repository.GetById(id);
             return View(model);
 
         }
-        public IActionResult Update(Product model)
+        [HttpPost]
+        public IActionResult Update(int id, [Bind("Name", "Price", "Quantity", "productType")] Product model)
         {
-            var preModel = Repository.GetById(model.Id);
-            preModel.Name = model.Name;
-            preModel.Price = model.Price;
-            preModel.productType = model.productType;
+            Repository.Update(Repository.GetById(id));
             return RedirectToAction("Index");
         }
     }
