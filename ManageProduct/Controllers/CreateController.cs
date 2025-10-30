@@ -14,6 +14,7 @@ namespace ManageProduct.Controllers
         {
             return View();
         }
+        [HttpPost]
         public IActionResult Create(Product model)
         {
             ProductRepository.Add(model);

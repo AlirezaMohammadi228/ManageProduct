@@ -3,21 +3,22 @@
 *@
 @{
 }
+@model Product 
 <div class="container mt-5">
     <div class="p-4 bg-light border rounded">
-        <form>
+        <form asp-action="Create" asp-controller="Product" method="post">
             <div class="mb-3">
-                <label for="username" class="form-label">نام کاربری</label>
-                <input type="text" class="form-control" placeholder="Product Name">
+                <label for="product-name" class="form-label">Product Name</label>
+                <input type="text" class="form-control" name="Name" id="product-name" placeholder="Product Name">
             </div>
 
             <div class="mb-3">
-                <label for="price" class="form-label">رمز عبور</label>
-                <input type="number" class="form-control" id="price" placeholder="Product Price">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" name="Price" id="price" placeholder="Product Price">
             </div>
             <div class="mb-3">
                 <label for="category" class="form-label">Please Select the type</label>
-                <select class="form-select" id="category" required>
+                <select class="form-select" id="category" name="productType" required>
                     
                     <option value="1">Clothes</option>
                     <option value="2">Detergent</option>
@@ -25,8 +26,8 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="price" class="form-label">رمز عبور</label>
-                <input type="number" class="form-control" id="quantity" placeholder="Product Price">
+                <label for="price" class="form-label">Quantity</label>
+                <input type="number" class="form-control" name="Quantity" id="quantity" placeholder="Product Quantity">
             </div>
 
             <button type="submit" class="btn btn-primary">Send</button>
