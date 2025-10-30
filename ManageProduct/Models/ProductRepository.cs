@@ -15,9 +15,12 @@
         {
             Products.Remove(product);
         }
-        public void Edit(Product product)
+        public void Update(Product product)
         {
-           
+            var preModel = GetById(product.Id);
+            preModel.Name = product.Name;
+            preModel.Price = product.Price;
+            preModel.productType = product.productType;
         }
         public List<Product> GetAll()
         {
