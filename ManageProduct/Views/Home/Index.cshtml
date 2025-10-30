@@ -2,30 +2,36 @@
     ViewData["Title"] = "Home Page";
 }
 
-<table>
-    <thead>
-        <tr>
-            <th>ردیف</th>
-            <th>نام</th>
-            <th>نوع</th>
-            <th>قیمت</th>
-            <th>تعداد</th>
-        </tr>
-    </thead>
-    <tbody>
-        @{
-            int rowNumber = 1;
-        }
-        @foreach (var item in Model)
-        {
+<form action="/" method="post">
+    <table class="table">
+        <thead>
             <tr>
-                <td>@rowNumber</td>
-                <td>@item.Name</td>
-                <td>@item.Type</td>
-                <td>@item.Price.ToString("N0") تومان</td>
-                <td>@item.Quantity</td>
+                <th scope="col">ردیف</th>
+                <th scope="col">نام</th>
+                <th scope="col">نوع</th>
+                <th scope="col">تعداد</th>
             </tr>
-            rowNumber++;
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary">Create</button>
+</form>
