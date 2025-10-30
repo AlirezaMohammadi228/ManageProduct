@@ -1,4 +1,6 @@
-﻿namespace ManageProduct.Models
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace ManageProduct.Models
 {
     public class ProductRepository
     {
@@ -11,9 +13,14 @@
         {
             Products.Add(product);
         }
-        public void Delete(Product product)
+        public void ConfirmDelete(int id)
         {
-            Products.Remove(product);
+            var item = Products.FirstOrDefault(x => x.Id == id);
+            if (item != null)
+            {
+                item.IsExist = false;
+            }
+            
         }
         public void Edit(Product product)
         {
