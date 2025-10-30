@@ -1,0 +1,10 @@
+﻿@model ManageProduct.Models.Product
+<h1>Delete</h1>
+<h2>Sure?</h2>
+<p>@Model.Name @Model.Quantity @Model.productType @Model.Price</p>
+<form method="post" action="/Product/ConfirmDelete/@Model.Id">
+    <input name="Delete" value="Yes" type="submit"/>
+</form>
+<p>
+    @Html.ActionLink("No,Back","Index")
+</p>
